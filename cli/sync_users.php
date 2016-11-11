@@ -22,7 +22,7 @@
  *
  * Sample cron entry:
  * # 5 minutes past 4am
- * 5 4 * * * sudo -u www-data /usr/bin/php /var/www/moodle/auth/ws/cli/sync_users.php
+ * 5 4 * * * sudo -u www-data /usr/bin/php /var/www/moodle/auth/totvs/cli/sync_users.php
  *
  * Notes:
  *   - it is required to use the web server account when executing PHP CLI scripts
@@ -36,7 +36,7 @@
  * Performance notes:
  * + The code is simpler, but not as optimized as its LDAP counterpart.
  *
- * @package    auth_ws
+ * @package    auth_totvs
  * @copyright  2014 Daniel Neis - 2006 Martin Langhoff
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -58,7 +58,7 @@ if ($unrecognized) {
 
 if ($options['help']) {
     $help = "Execute user account sync with external webservice.
-The auth_ws plugin must be enabled and properly configured.
+The auth_totvs plugin must be enabled and properly configured.
 
 Options:
 -n, --noupdate        Skip update of existing users
@@ -66,19 +66,19 @@ Options:
 -h, --help            Print out this help
 
 Example:
-\$ sudo -u www-data /usr/bin/php auth/ws/cli/sync_users.php
+\$ sudo -u www-data /usr/bin/php auth/totvs/cli/sync_users.php
 
 Sample cron entry:
 # 5 minutes past 4am
-5 4 * * * sudo -u www-data /usr/bin/php /var/www/moodle/auth/ws/cli/sync_users.php
+5 4 * * * sudo -u www-data /usr/bin/php /var/www/moodle/auth/totvs/cli/sync_users.php
 ";
 
     echo $help;
     die;
 }
 
-if (!is_enabled_auth('ws')) {
-    cli_error('auth_ws plugin is disabled, synchronisation stopped', 2);
+if (!is_enabled_auth('totvs')) {
+    cli_error('auth_totvs plugin is disabled, synchronisation stopped', 2);
 }
 
 if (empty($options['verbose'])) {
@@ -89,8 +89,8 @@ if (empty($options['verbose'])) {
 
 $update = empty($options['noupdate']);
 
-/** @var auth_plugin_ws $wsauth */
-$wsauth = get_auth_plugin('ws');
-$result = $wsauth->sync_users($trace, $update);
+/** @var auth_plugin_totvs $totvsauth */
+$totvsauth = get_auth_plugin('totvs');
+$result = $totvsauth->sync_users($trace, $update);
 
 exit($result);

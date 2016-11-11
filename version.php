@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    auth_ws
+ * @package    auth_totvs
  * @copyright  Daniel Neis Araujo
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,4 +26,4 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2013110500;
 $plugin->requires  = 2012010000;
-$plugin->component = 'auth_ws';
+$plugin->component = 'auth_totvs';
