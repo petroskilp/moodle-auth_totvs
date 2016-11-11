@@ -1,3 +1,4 @@
+<img src='https://travis-ci.org/petroskilp/moodle-auth_totvs.svg?branch=master'/>
 # Moodle TOTVS Webservice Authentication Plugin
 
 Moodle plugin to authenticate users against TOTVS webservice.
