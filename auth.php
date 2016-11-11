@@ -19,7 +19,7 @@
  *
  * Checks against an external webservice.
  *
- * @package    auth_ws
+ * @package    auth_totvs
  * @author     Daniel Neis Araujo
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
  */
@@ -31,14 +31,14 @@ require_once($CFG->libdir.'/authlib.php');
 /**
  * External webservice authentication plugin.
  */
-class auth_plugin_ws extends auth_plugin_base {
+class auth_plugin_totvs extends auth_plugin_base {
 
     /**
      * Constructor.
      */
     public function __construct() {
-        $this->authtype = 'ws';
-        $this->config = get_config('auth/ws');
+        $this->authtype = 'totvs';
+        $this->config = get_config('auth/totvs');
 
         if (isset($this->config->default_params) && !empty($this->config->default_params)) {
             $params = explode(',', $this->config->default_params);
@@ -47,9 +47,9 @@ class auth_plugin_ws extends auth_plugin_base {
                 list($paramname, $value) = explode(':', $p);
                 $defaultparams[$paramname] = $value;
             }
-            $this->config->ws_default_params = $defaultparams;
+            $this->config->totvs_default_params = $defaultparams;
         } else {
-            $this->config->ws_default_params = array();
+            $this->config->totvs_default_params = array();
         }
     }
 
@@ -67,7 +67,7 @@ class auth_plugin_ws extends auth_plugin_base {
         $params  = array($this->config->auth_function_username_paramname => $username,
                          $this->config->auth_function_password_paramname => $password);
 
-        $result = $this->call_ws($this->config->auth_serverurl, $functionname, $params);
+        $result = $this->call_totvs($this->config->auth_serverurl, $functionname, $params);
 
         return ($result[$this->config->auth_function_resultClass][$this->config->auth_function_resultField] == true);
     }
@@ -89,11 +89,11 @@ class auth_plugin_ws extends auth_plugin_base {
         return array();
     }
 
-    private function call_ws($serverurl, $functionname, $params = array()) {
+    private function call_totvs($serverurl, $functionname, $params = array()) {
 
         $serverurl = $serverurl . '?wsdl';
 
-        $params = array_merge($this->config->ws_default_params, $params);
+        $params = array_merge($this->config->totvs_default_params, $params);
 
         $client = new SoapClient($serverurl);
         try {
@@ -232,16 +232,16 @@ class auth_plugin_ws extends auth_plugin_base {
             $config->changepasswordurl = '';
         }
 
-        set_config('protocol',                         $config->protocol,                         'auth/ws');
-        set_config('auth_serverurl',                   $config->auth_serverurl,                   'auth/ws');
-        set_config('default_params',                   $config->default_params,                   'auth/ws');
-        set_config('auth_function',                    $config->auth_function,                    'auth/ws');
-        set_config('auth_function_username_paramname', $config->auth_function_username_paramname, 'auth/ws');
-        set_config('auth_function_password_paramname', $config->auth_function_password_paramname, 'auth/ws');
-        set_config('auth_function_resultClass',        $config->auth_function_resultClass,        'auth/ws');
-        set_config('auth_function_resultField',        $config->auth_function_resultField,        'auth/ws');
-        set_config('removeuser',                       $config->removeuser,                       'auth/ws');
-        set_config('changepasswordurl',                $config->changepasswordurl,                'auth/ws');
+        set_config('protocol',                         $config->protocol,                         'auth/totvs');
+        set_config('auth_serverurl',                   $config->auth_serverurl,                   'auth/totvs');
+        set_config('default_params',                   $config->default_params,                   'auth/totvs');
+        set_config('auth_function',                    $config->auth_function,                    'auth/totvs');
+        set_config('auth_function_username_paramname', $config->auth_function_username_paramname, 'auth/totvs');
+        set_config('auth_function_password_paramname', $config->auth_function_password_paramname, 'auth/totvs');
+        set_config('auth_function_resultClass',        $config->auth_function_resultClass,        'auth/totvs');
+        set_config('auth_function_resultField',        $config->auth_function_resultField,        'auth/totvs');
+        set_config('removeuser',                       $config->removeuser,                       'auth/totvs');
+        set_config('changepasswordurl',                $config->changepasswordurl,                'auth/totvs');
 
         return true;
     }
