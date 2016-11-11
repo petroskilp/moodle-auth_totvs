@@ -48,7 +48,7 @@ require_once("$CFG->libdir/clilib.php");
 
 // Now get cli options.
 list($options, $unrecognized) = cli_get_params(array('noupdate' => false,
-                                                     'verbose'=> false,
+                                                     'verbose' => false,
                                                      'help' => false), array('n' => 'noupdate', 'v' => 'verbose', 'h' => 'help'));
 
 if ($unrecognized) {

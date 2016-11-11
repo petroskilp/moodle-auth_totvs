@@ -81,7 +81,7 @@ class auth_plugin_totvs extends auth_plugin_base {
      * @param bool $do_updates  Optional: set to true to force an update of existing accounts
      * @return int 0 means success, 1 means failure
      */
-    public function sync_users(progress_trace $trace, $do_updates=false) {
+    public function sync_users(progress_trace $trace, $doupdates=false) {
         return true;
     }
 
@@ -190,8 +190,8 @@ class auth_plugin_totvs extends auth_plugin_base {
      * @param array $user_fields
      * @return void
      */
-    public function config_form($config, $err, $user_fields) {
-        include 'config.html';
+    public function config_form($config, $err, $userfields) {
+        include('config.html');
     }
 
     /**
