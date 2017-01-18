@@ -35,15 +35,15 @@ if (!isset($config->changepasswordurl)) {
 <table cellspacing="0" cellpadding="5" border="0">
 
 <tr valign="top" class="required">
-    <td align="right"><label for="protocol"><?php print_string("protocol", "auth_ws") ?></label></td>
+    <td align="right"><label for="protocol"><?php print_string("protocol", "auth_totvs") ?></label></td>
     <td>
         <p id="protocol">SOAP</p>
     </td>
-    <td><?php print_string("protocol_desc", "auth_ws") ?></td>
+    <td><?php print_string("protocol_desc", "auth_totvs") ?></td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_serverurl"><?php print_string("auth_serverurl", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_serverurl"><?php print_string("auth_serverurl", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_serverurl" name="auth_serverurl" type="text" size="50" value="<?php echo $config->auth_serverurl; ?>" />
         <?php
@@ -52,11 +52,11 @@ if (!isset($config->changepasswordurl)) {
         }
         ?>
     </td>
-    <td><?php print_string("auth_serverurl_desc", "auth_ws") ?></td>
+    <td><?php print_string("auth_serverurl_desc", "auth_totvs") ?></td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="default_params"><?php print_string("default_params", "auth_ws") ?></label></td>
+    <td align="right"><label for="default_params"><?php print_string("default_params", "auth_totvs") ?></label></td>
     <td>
         <input id="default_params" name="default_params" type="text" size="50" value="<?php echo $config->default_params; ?>" />
         <?php
@@ -65,11 +65,11 @@ if (!isset($config->changepasswordurl)) {
         }
         ?>
     </td>
-    <td><?php print_string("default_params_desc", "auth_ws") ?></td>
+    <td><?php print_string("default_params_desc", "auth_totvs") ?></td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_function"><?php print_string("auth_function", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_function"><?php print_string("auth_function", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_function" name="auth_function" type="text" size="50" value="<?php p($config->auth_function)?>" autocomplete="off"/>
         <?php
@@ -81,12 +81,12 @@ if (!isset($config->changepasswordurl)) {
         ?>
     </td>
     <td>
-    <?php print_string("auth_function_desc", "auth_ws") ?>
+    <?php print_string("auth_function_desc", "auth_totvs") ?>
     </td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_function_username_paramname"><?php print_string("auth_function_username_paramname", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_function_username_paramname"><?php print_string("auth_function_username_paramname", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_function_username_paramname" name="auth_function_username_paramname" type="text" size="50" value="<?php p($config->auth_function_username_paramname)?>" autocomplete="off"/>
         <?php
@@ -98,12 +98,12 @@ if (!isset($config->changepasswordurl)) {
         ?>
     </td>
     <td>
-    <?php print_string("auth_function_username_paramname_desc", "auth_ws") ?>
+    <?php print_string("auth_function_username_paramname_desc", "auth_totvs") ?>
     </td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_function_password_paramname"><?php print_string("auth_function_password_paramname", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_function_password_paramname"><?php print_string("auth_function_password_paramname", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_function_password_paramname" name="auth_function_password_paramname" type="text" size="50" value="<?php p($config->auth_function_password_paramname)?>" autocomplete="off"/>
         <?php
@@ -115,12 +115,12 @@ if (!isset($config->changepasswordurl)) {
         ?>
     </td>
     <td>
-    <?php print_string("auth_function_password_paramname_desc", "auth_ws") ?>
+    <?php print_string("auth_function_password_paramname_desc", "auth_totvs") ?>
     </td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_function_resultClass"><?php print_string("auth_function_resultClass", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_function_resultClass"><?php print_string("auth_function_resultClass", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_function_resultClass" name="auth_function_resultClass" type="text" size="50" value="<?php p($config->auth_function_resultClass)?>" autocomplete="off"/>
         <?php
@@ -132,12 +132,12 @@ if (!isset($config->changepasswordurl)) {
         ?>
     </td>
     <td>
-    <?php print_string("auth_function_resultClass_desc", "auth_ws") ?>
+    <?php print_string("auth_function_resultClass_desc", "auth_totvs") ?>
     </td>
 </tr>
 
 <tr valign="top" class="required">
-    <td align="right"><label for="auth_function_resultField"><?php print_string("auth_function_resultField", "auth_ws") ?></label></td>
+    <td align="right"><label for="auth_function_resultField"><?php print_string("auth_function_resultField", "auth_totvs") ?></label></td>
     <td>
         <input id="auth_function_resultField" name="auth_function_resultField" type="text" size="50" value="<?php p($config->auth_function_resultField)?>" autocomplete="off"/>
         <?php
@@ -149,7 +149,7 @@ if (!isset($config->changepasswordurl)) {
         ?>
     </td>
     <td>
-    <?php print_string("auth_function_resultField_desc", "auth_ws") ?>
+    <?php print_string("auth_function_resultField_desc", "auth_totvs") ?>
     </td>
 </tr>
 
@@ -170,7 +170,7 @@ if (!isset($config->changepasswordurl)) {
 </tr>
 
 <tr valign="top">
-    <td align="right"><label for="changepasswordurl"><?php print_string("changepasswordurl", "auth_ws") ?></label></td>
+    <td align="right"><label for="changepasswordurl"><?php print_string("changepasswordurl", "auth_totvs") ?></label></td>
     <td>
         <input id="changepasswordurl" name="changepasswordurl" type="text" value="<?php echo $config->changepasswordurl ?>" />
         <?php
